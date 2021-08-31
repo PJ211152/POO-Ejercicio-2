@@ -32,11 +32,11 @@
             this.rb_Gerente = new System.Windows.Forms.RadioButton();
             this.rb_SubGerente = new System.Windows.Forms.RadioButton();
             this.rb_Secretaria = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtb_SalarioBruto = new System.Windows.Forms.TextBox();
+            this.txtb_MontoDescuento = new System.Windows.Forms.TextBox();
+            this.txtb_SalarioNeto = new System.Windows.Forms.TextBox();
+            this.txtb_Apellidos = new System.Windows.Forms.TextBox();
+            this.txtb_Nombres = new System.Windows.Forms.TextBox();
             this.lbl_SalarioBruto = new System.Windows.Forms.Label();
             this.lbl_MontoDescuento = new System.Windows.Forms.Label();
             this.lbl_SalarioNeto = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@
             this.btn_Calcular.TabIndex = 0;
             this.btn_Calcular.Text = "Calcular";
             this.btn_Calcular.UseVisualStyleBackColor = true;
+            this.btn_Calcular.Click += new System.EventHandler(this.btn_Calcular_Click);
             // 
             // rb_Gerente
             // 
@@ -63,6 +64,7 @@
             this.rb_Gerente.TabStop = true;
             this.rb_Gerente.Text = "Gerente";
             this.rb_Gerente.UseVisualStyleBackColor = true;
+            this.rb_Gerente.CheckedChanged += new System.EventHandler(this.rb_Gerente_CheckedChanged);
             // 
             // rb_SubGerente
             // 
@@ -74,6 +76,7 @@
             this.rb_SubGerente.TabStop = true;
             this.rb_SubGerente.Text = "SubGerente";
             this.rb_SubGerente.UseVisualStyleBackColor = true;
+            this.rb_SubGerente.CheckedChanged += new System.EventHandler(this.rb_SubGerente_CheckedChanged);
             // 
             // rb_Secretaria
             // 
@@ -85,41 +88,45 @@
             this.rb_Secretaria.TabStop = true;
             this.rb_Secretaria.Text = "Secretaria";
             this.rb_Secretaria.UseVisualStyleBackColor = true;
+            this.rb_Secretaria.CheckedChanged += new System.EventHandler(this.rb_Secretaria_CheckedChanged);
             // 
-            // textBox1
+            // txtb_SalarioBruto
             // 
-            this.textBox1.Location = new System.Drawing.Point(199, 156);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtb_SalarioBruto.Location = new System.Drawing.Point(199, 156);
+            this.txtb_SalarioBruto.Name = "txtb_SalarioBruto";
+            this.txtb_SalarioBruto.Size = new System.Drawing.Size(100, 20);
+            this.txtb_SalarioBruto.TabIndex = 4;
+            this.txtb_SalarioBruto.TextChanged += new System.EventHandler(this.txtb_SalarioBruto_TextChanged);
             // 
-            // textBox2
+            // txtb_MontoDescuento
             // 
-            this.textBox2.Location = new System.Drawing.Point(199, 182);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtb_MontoDescuento.Location = new System.Drawing.Point(199, 182);
+            this.txtb_MontoDescuento.Name = "txtb_MontoDescuento";
+            this.txtb_MontoDescuento.Size = new System.Drawing.Size(100, 20);
+            this.txtb_MontoDescuento.TabIndex = 5;
+            this.txtb_MontoDescuento.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            // txtb_SalarioNeto
             // 
-            this.textBox3.Location = new System.Drawing.Point(199, 208);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 6;
+            this.txtb_SalarioNeto.Location = new System.Drawing.Point(199, 208);
+            this.txtb_SalarioNeto.Name = "txtb_SalarioNeto";
+            this.txtb_SalarioNeto.Size = new System.Drawing.Size(100, 20);
+            this.txtb_SalarioNeto.TabIndex = 6;
             // 
-            // textBox4
+            // txtb_Apellidos
             // 
-            this.textBox4.Location = new System.Drawing.Point(460, 74);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
+            this.txtb_Apellidos.Location = new System.Drawing.Point(460, 74);
+            this.txtb_Apellidos.Name = "txtb_Apellidos";
+            this.txtb_Apellidos.Size = new System.Drawing.Size(100, 20);
+            this.txtb_Apellidos.TabIndex = 7;
             // 
-            // textBox5
+            // txtb_Nombres
             // 
-            this.textBox5.Location = new System.Drawing.Point(136, 74);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 8;
+            this.txtb_Nombres.Location = new System.Drawing.Point(136, 74);
+            this.txtb_Nombres.Name = "txtb_Nombres";
+            this.txtb_Nombres.Size = new System.Drawing.Size(100, 20);
+            this.txtb_Nombres.TabIndex = 8;
+            this.txtb_Nombres.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // lbl_SalarioBruto
             // 
@@ -177,11 +184,11 @@
             this.Controls.Add(this.lbl_SalarioNeto);
             this.Controls.Add(this.lbl_MontoDescuento);
             this.Controls.Add(this.lbl_SalarioBruto);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtb_Nombres);
+            this.Controls.Add(this.txtb_Apellidos);
+            this.Controls.Add(this.txtb_SalarioNeto);
+            this.Controls.Add(this.txtb_MontoDescuento);
+            this.Controls.Add(this.txtb_SalarioBruto);
             this.Controls.Add(this.rb_Secretaria);
             this.Controls.Add(this.rb_SubGerente);
             this.Controls.Add(this.rb_Gerente);
@@ -200,11 +207,11 @@
         private System.Windows.Forms.RadioButton rb_Gerente;
         private System.Windows.Forms.RadioButton rb_SubGerente;
         private System.Windows.Forms.RadioButton rb_Secretaria;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtb_SalarioBruto;
+        private System.Windows.Forms.TextBox txtb_MontoDescuento;
+        private System.Windows.Forms.TextBox txtb_SalarioNeto;
+        private System.Windows.Forms.TextBox txtb_Apellidos;
+        private System.Windows.Forms.TextBox txtb_Nombres;
         private System.Windows.Forms.Label lbl_SalarioBruto;
         private System.Windows.Forms.Label lbl_MontoDescuento;
         private System.Windows.Forms.Label lbl_SalarioNeto;
