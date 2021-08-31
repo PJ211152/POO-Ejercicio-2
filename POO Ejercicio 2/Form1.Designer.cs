@@ -194,7 +194,7 @@
             this.Controls.Add(this.rb_Gerente);
             this.Controls.Add(this.btn_Calcular);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calculadora de salarios";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -73,7 +73,7 @@ namespace POO_Ejercicio_2
         private void btn_Calcular_Click(object sender, EventArgs e)
         {
             double descuento=0, salneto, salbruto;
-            string n, a;
+            string n, a,b;
 
             try
             {
@@ -94,12 +94,14 @@ namespace POO_Ejercicio_2
                         descuento = 0.05;
                     }
 
-                    salbruto = double.Parse(txtb_SalarioBruto.Text);
-                    salneto = -(descuento * salbruto) + salbruto;
-                    txtb_SalarioNeto.Text = Convert.ToString(salneto);
-                    n = txtb_Nombres.Text;
-                    a = txtb_Apellidos.Text;
-                }
+                        salbruto = double.Parse(txtb_SalarioBruto.Text);
+                        salneto = -(descuento * salbruto) + salbruto;
+                        txtb_SalarioNeto.Text = Convert.ToString(salneto);
+                        n = txtb_Nombres.Text;
+                        a = txtb_Apellidos.Text;
+                        b = Convert.ToString(descuento * salbruto);
+                        MessageBox.Show("El Sr/Sra "+n+" con apellido "+a+" con salario bruto de $"+salbruto+" al cual se le descuenta $"+b+" tiene un salario neto de $"+salneto+"");
+                    }
                 else
                 {
                     MessageBox.Show("Porfavor ingrese nombres y apellidos");
